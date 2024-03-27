@@ -1,6 +1,6 @@
 ## Goal
 
-The goal is to study the problem of maintaining a (1+𝜀)-factor approximation of the diameter ∆(𝑃) of a stream of points under the sliding window model.
+The goal is to study the problem of maintaining a $(1 + \epsilon)$-factor approximation of the diameter $\Delta(P)$ of a stream of points under the sliding window model.
 
 ## Sliding window model
 
@@ -12,5 +12,5 @@ The goal is to study the problem of maintaining a (1+𝜀)-factor approximation 
 
 ## q.py
 
-A didactic implementation of the one-dimensional algorithm that computes the approximate diameter storing O(log<sub>1+α</sub>R) points. Further explanations are available in our slides `geometricOpt.pdf` or in the original paper `paper.pdf`.
+A didactic implementation of the one-dimensional algorithm that computes the approximate diameter storing $O(\log_{1+\alpha} R)$ points. Further explanations are available in our slides `geomOpt.pdf` or in the original paper `paper.pdf`.
 

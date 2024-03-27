@@ -1,12 +1,14 @@
 import math
 from random import randint
 
-def exact_diameter_calculator(slist):
 
-        maxValue = max(slist)
-        minValue = min(slist)
+def get_exact_diameter(slist):
 
-        return maxValue - minValue
+    maxValue = max(slist)
+    minValue = min(slist)
+
+    return maxValue - minValue
+
 
 def insert(windowX, newpoint):
     if not windowX:
@@ -19,6 +21,7 @@ def insert(windowX, newpoint):
 
     return windowX
 
+
 def refine(epsilon, windowX, q1, x, q_index, y):
 
     if (1 + epsilon) * abs(q1 - x) >= abs(q1 - y):
@@ -26,7 +29,8 @@ def refine(epsilon, windowX, q1, x, q_index, y):
 
     return windowX
 
-def diameter_calculator(epsilon, windowX):
+
+def compute_diameter(epsilon, windowX):
     if len(windowX) > 2:
         q1 = windowX[0]
         i = 1
@@ -37,7 +41,8 @@ def diameter_calculator(epsilon, windowX):
 
     return windowX[-1] - windowX[0]
 
-def approx_diameter_calculator(epsilon, source, window, window_size):
+
+def get_approx_diameter(epsilon, source, window, window_size):
 
     if window_size < 1:
         return 1
@@ -49,12 +54,15 @@ def approx_diameter_calculator(epsilon, source, window, window_size):
 
         if len(window) > window_size:
             window.pop()
-        
+
         if len(exact_window) > window_size:
             exact_window.pop(0)
-            
+
         if len(window) == window_size:
-            print(f'{diameter_calculator(epsilon, window) = } | {exact_diameter_calculator(exact_window) = }')
+            print(
+                f"{get_diameter(epsilon, window) = } | {get_exact_diameter(exact_window) = }"
+            )
+
 
 def main():
     epsilon = 0.1
@@ -62,10 +70,8 @@ def main():
     window = []
     window_size = 5
 
-    approx_diameter_calculator(epsilon, source, window, window_size)
+    get_approx_diameter(epsilon, source, window, window_size)
+
 
 if __name__ == "__main__":
     main()
-
-
-    
